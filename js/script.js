@@ -7,7 +7,7 @@ var sconto1 = 20;
 var sconto2 = 40;
 var prezzoScontanto;
 var prezzo;
-prezzo = (chilometri * prezzoAlChilometro);
+prezzo = (chilometri * prezzoAlChilometro).toFixed(2);
 
 if (!isNaN(anni) && !isNaN(chilometri)) {
   if (anni < minorenni) {
