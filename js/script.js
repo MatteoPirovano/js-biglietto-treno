@@ -9,12 +9,14 @@ var prezzoScontanto;
 var prezzo;
 prezzo = chilometri * prezzoAlChilometro;
 
-if (anni < minorenni) {
-  prezzoScontantosconto = prezzo - ((prezzo * sconto1) / 100);
-  document.getElementById('sconto').innerHTML = prezzoScontantosconto;
-} else if (anni > anziani) {
-  prezzoScontantosconto = prezzo - ((prezzo * sconto2) / 100);
-  document.getElementById('sconto').innerHTML = prezzoScontantosconto;
-} else {
-  document.getElementById('sconto').innerHTML = prezzo;
+if (!isNaN(anni) && !isNaN(chilometri)) {
+  if (anni < minorenni) {
+    prezzoScontantosconto = prezzo - ((prezzo * sconto1) / 100);
+    document.getElementById('sconto').innerHTML = prezzoScontantosconto;
+  } else if (anni >= anziani) {
+    prezzoScontantosconto = prezzo - ((prezzo * sconto2) / 100);
+    document.getElementById('sconto').innerHTML = prezzoScontantosconto;
+  } else {
+    document.getElementById('sconto').innerHTML = prezzo;
+  }
 }
