@@ -7,14 +7,14 @@ var sconto1 = 20;
 var sconto2 = 40;
 var prezzoScontanto;
 var prezzo;
-prezzo = Math.floor (chilometri * prezzoAlChilometro);
+prezzo = (chilometri * prezzoAlChilometro);
 
 if (!isNaN(anni) && !isNaN(chilometri)) {
   if (anni < minorenni) {
-    prezzoScontantosconto = Math.ceil (prezzo - ((prezzo * sconto1) / 100));
+    prezzoScontantosconto =  (prezzo - ((prezzo * sconto1) / 100)).toFixed(2);
     document.getElementById('sconto').innerHTML = prezzoScontantosconto;
   } else if (anni >= anziani) {
-    prezzoScontantosconto = Math.ceil (prezzo - ((prezzo * sconto2) / 100));
+    prezzoScontantosconto =  (prezzo - ((prezzo * sconto2) / 100)).toFixed(2);
     document.getElementById('sconto').innerHTML = prezzoScontantosconto;
   } else {
     document.getElementById('sconto').innerHTML = prezzo;
